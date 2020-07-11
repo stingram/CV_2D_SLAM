@@ -64,8 +64,6 @@ class robot:
     #        is of variable length. Set measurement_range to -1 if you want all
     #        landmarks to be visible at all times
     #
-    
-    ## TODO: complete the sense function
     def sense(self):
         ''' This function does not take in any parameters, instead it references internal variables
             (such as self.landamrks) to measure the distance between the robot and any landmarks
@@ -80,18 +78,15 @@ class robot:
         
         ## TODO: iterate through all of the landmarks in a world
         
-        ## TODO: For each landmark
-        ## 1. compute dx and dy, the distances between the robot and the landmark
+		## For each landmark
+        ## 1. computes dx and dy, the distances between the robot and the landmark
         ## 2. account for measurement noise by *adding* a noise component to dx and dy
-        ##    - The noise component should be a random value between [-1.0, 1.0)*measurement_noise
-        ##    - Feel free to use the function self.rand() to help calculate this noise component
-        ##    - It may help to reference the `move` function for noise calculation
         ## 3. If either of the distances, dx or dy, fall outside of the internal var, measurement_range
         ##    then we cannot record them; if they do fall in the range, then add them to the measurements list
         ##    as list.append([index, dx, dy]), this format is important for data creation done later
         for i, landmark  in enumerate(self.landmarks):
-            dx = self.x - landmark[0] + self.rand() * self.measurement_noise
-            dy = self.y - landmark[1] + self.rand() * self.measurement_noise
+            dx = landmark[0] - self.x + self.rand() * self.measurement_noise
+            dy = landmark[1] - self.y + self.rand() * self.measurement_noise
                        
             # landmark too far way
             if abs(dx) > self.measurement_range or abs(dy) > self.measurement_range:
@@ -99,9 +94,8 @@ class robot:
             else:
                 measurements.append([i,dx,dy])
         
-        ## TODO: return the final, complete list of measurements
+        ## return the final, complete list of measurements
         return measurements
-
 
     # --------
     # make_landmarks:
@@ -114,11 +108,9 @@ class robot:
                                    round(random.random() * self.world_size)])
         self.num_landmarks = num_landmarks
 
-
     # called when print(robot) is called; prints the robot's location
     def __repr__(self):
         return 'Robot: [x=%.5f y=%.5f]'  % (self.x, self.y)
-
 
 
 ####### END robot class #######
