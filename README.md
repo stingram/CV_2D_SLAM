@@ -2,9 +2,9 @@
 Implementation of Graph SLAM for Robot in 2D environment
 
 
-Summary
+##  Summary
 
-This project demonstrates Graph SLAM for a robot in a 2D environment. It includes three main files: robot_class.py, helpers.py and SLAM.ipynb.
+This project demonstrates Graph SLAM for a robot in a 2D environment. Graph SLAM uses noisy measurements  of known landmarks within visibility range and noisy movements to estimate the robot's position in the world over time and the final estimated pose of the robot and the landmarks. This repository includes three main files: robot_class.py, helpers.py and SLAM.ipynb.
 
 The main driver logic and more detailed information of the main process  can be found in SLAM.ipynb.
 
