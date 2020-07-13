@@ -5,7 +5,7 @@ Implementation of Graph SLAM for Robot in 2D environment
 
 This project implements Graph SLAM for a robot in a 2D environment. Graph SLAM uses noisy measurements  of known landmarks within visibility range and noisy movements to estimate the robot's position in the world over time and the final estimated pose of the robot and the landmarks. 
 
-The image below shows the visualized outputof the Graph SLAM algorithm. It marks the estimated landmark positions and the final estimated pose of the robot in the 2D world space. 
+The image below shows the visualized output of the Graph SLAM algorithm. It marks the estimated landmark positions and the final estimated pose of the robot in the 2D world space. The robot is marked by a red circle and each landmark is represented by a purple X.
 
 ![Example Output](images/robot_world.png)
 
